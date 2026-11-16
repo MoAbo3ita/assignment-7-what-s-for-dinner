@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What's For Dinner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header id="header" class="bg-white shadow-sm border-bottom">
+      <div class="container-xl py-2 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <div class="brand-logo d-flex align-items-center justify-content-center text-white">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div>
+            <h1 class="brand-title fw-bold mb-0">What's For Dinner</h1>
+            <p class="header-sub small mb-0">Your daily meal inspiration</p>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 gap-md-4 text-secondary fs-5">
+          <i class="fa-solid fa-bookmark d-none d-sm-inline"></i>
+          <i class="fa-solid fa-clock-rotate-left d-none d-sm-inline"></i>
+          <i class="fa-solid fa-gear d-none d-sm-inline"></i>
+          <div class="avatar d-flex align-items-center justify-content-center text-white">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="container-xl py-3">
+      <section id="recipe-display-section" class="recipe-card bg-white shadow-lg border">
+        <div class="row g-0 h-100">
+          <div class="col-lg-5 recipe-media position-relative">
+            <img id="recipe-image" class="w-100 h-100" src="" alt="" />
+
+            <div
+              class="rating-badge position-absolute bg-white rounded-pill shadow-sm d-flex align-items-center gap-2"
+            >
+              <i class="fa-solid fa-star text-warning"></i>
+              <strong id="recipe-rating"></strong>
+              <span id="recipe-reviews" class="small"></span>
+            </div>
+
+            <div
+              class="stats-box position-absolute bg-white shadow d-flex justify-content-around text-center"
+            >
+              <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-clock stat-prep"></i>
+                <span class="small">Prep Time</span>
+                <strong id="prep-time"></strong>
+              </div>
+              <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-fire-burner stat-cook"></i>
+                <span class="small">Cook Time</span>
+                <strong id="cook-time"></strong>
+              </div>
+              <div class="stat d-flex flex-column align-items-center">
+                <i class="fa-solid fa-users stat-serve"></i>
+                <span class="small">Servings</span>
+                <strong id="servings"></strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 recipe-content d-flex flex-column">
+            <div class="d-flex gap-2 mb-2">
+              <span id="recipe-difficulty" class="badge rounded-pill"></span>
+              <span id="recipe-cuisine" class="badge rounded-pill tag-cuisine"></span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-start gap-3">
+              <h2 id="recipe-title" class="recipe-title fw-bold mb-1"></h2>
+              <div class="d-flex gap-2 flex-shrink-0">
+                <button id="bookmark-btn" class="btn icon-btn" aria-label="Save recipe">
+                  <i class="fa-solid fa-bookmark"></i>
+                </button>
+                <button id="share-btn" class="btn icon-btn" aria-label="Share recipe">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+              </div>
+            </div>
+
+            <p id="recipe-description" class="description mb-2"></p>
+
+            <div id="time-alert" class="alert alert-danger time-alert d-none d-flex align-items-center gap-3 mb-2">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div>
+                <strong>Extended Preparation Time</strong>
+                <p class="mb-0">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+              </div>
+            </div>
+
+            <ul id="tabs" class="nav nav-tabs">
+              <li class="nav-item">
+                <button class="nav-link active" data-tab="ingredients">
+                  <i class="fa-solid fa-list-check"></i> Ingredients
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" data-tab="instructions">
+                  <i class="fa-solid fa-book-open"></i> Instructions
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" data-tab="nutrition">
+                  <i class="fa-solid fa-chart-pie"></i> Nutrition
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" data-tab="tips">
+                  <i class="fa-solid fa-lightbulb"></i> Chef's Tips
+                </button>
+              </li>
+            </ul>
+
+            <div id="tab-content" class="tab-content-area flex-grow-1"></div>
+
+            <div class="card-footer-bar">
+              <button id="another-btn" class="btn btn-brand">
+                <i class="fa-solid fa-rotate"></i> Try Another Recipe
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
